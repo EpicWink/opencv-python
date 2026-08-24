@@ -1,6 +1,9 @@
 name: CI
 
 on:
+  push:
+    branches:
+      - tmp/ci
   pull_request:
     branches:
       - 4.x
