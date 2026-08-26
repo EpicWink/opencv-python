@@ -33,7 +33,7 @@ jobs:
       enable-rolling: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
 
   Release_rolling:
-    if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
+    if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push' }}
     needs: [Build-manylinux, Build-windows, Build-macosm1, Build-macos]
     runs-on: ubuntu-22.04
     environment: opencv-python-rolling-release
